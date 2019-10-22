@@ -15,7 +15,7 @@ pipeline{
         }
         stage('PrintApk') { 
             steps {
-                sh 'ls -all apk/ && echo =========Build OK========'
+                sh 'echo =========Build OK========'
             }
         }
     }
