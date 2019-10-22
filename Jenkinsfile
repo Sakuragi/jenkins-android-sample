@@ -7,6 +7,7 @@ pipeline{
     stages {
         stage('Build') { 
             steps {
+                sh 'yes | sdkmanager --licenses'
                 sh 'chmod 777 ./gradlew'
                 sh './gradlew clean' 
                 sh './gradlew assembleRelease' 
