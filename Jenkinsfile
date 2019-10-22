@@ -6,7 +6,9 @@ pipeline{
     }
     stages {
         stage('checkout code'){
-            echo "检出代码"
+             steps {
+                sh 'echo checkout code'
+             }
         }
         stage('Clean') {
             steps {
@@ -17,11 +19,12 @@ pipeline{
             }
         }
         stage('Build'){
-             if(env.buildType=='release'){
-                  sh './gradlew assembleRelease'
-              }else{
-                  sh './gradlew assembleDebug'
-              }
+
+                if (env.buildType == 'release') {
+                    sh './gradlew assembleRelease'
+                } else {
+                    sh './gradlew assembleDebug'
+                }
         }
         stage('PrintApk') { 
             steps {
