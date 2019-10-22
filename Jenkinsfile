@@ -1,4 +1,4 @@
-pipeline{
+node{
     agent {
         docker {
             image 'javiersantos/android-ci:28.0.3'
