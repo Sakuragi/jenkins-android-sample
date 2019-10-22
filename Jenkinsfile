@@ -1,4 +1,4 @@
-node{
+pipeline{
     agent {
         docker {
             image 'javiersantos/android-ci:28.0.3'
@@ -19,12 +19,15 @@ node{
             }
         }
         stage('Build'){
-
-                if (env.buildType == 'release') {
-                    sh './gradlew assembleRelease'
-                } else {
-                    sh './gradlew assembleDebug'
+            steps{
+                script {
+                   if (env.buildType == 'release') {
+                       sh './gradlew assembleRelease'
+                   } else {
+                       sh './gradlew assembleDebug'
+                   }
                 }
+            }
         }
         stage('PrintApk') { 
             steps {
