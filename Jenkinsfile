@@ -8,18 +8,20 @@ pipeline{
         stage('checkout code'){
             echo "检出代码"
         }
-        stage('Build') { 
+        stage('Clean') {
             steps {
                 sh 'yes | /sdk/tools/bin/sdkmanager --licenses'
                 sh 'chmod 777 ./gradlew'
                 sh './gradlew clean'
                 sh 'echo init finished'
             }
-            if(env.buildType=='release'){
-                 sh './gradlew assembleRelease'
-            }else{
-                sh './gradlew assembleDebug'
-            }
+        }
+        stage('Build'){
+             if(env.buildType=='release'){
+                  sh './gradlew assembleRelease'
+              }else{
+                  sh './gradlew assembleDebug'
+              }
         }
         stage('PrintApk') { 
             steps {
