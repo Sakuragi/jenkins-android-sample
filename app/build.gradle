@@ -15,6 +15,17 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
+    flavorDimensions "version"
+    productFlavors {
+        productA {
+            dimension "version"
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "productA"]
+        }
+        productB {
+            dimension "version"
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "productB"]
+        }
+    }
 
     buildTypes {
         release {
