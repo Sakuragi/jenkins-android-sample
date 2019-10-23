@@ -1,14 +1,11 @@
-node{
-    stages {
-        agent {
-            docker {
-                image 'javiersantos/android-ci:28.0.3'
-            }
+pipeline{
+    agent {
+        docker {
+            image 'javiersantos/android-ci:28.0.3'
         }
+    }
+    stages {
         stage('checkout code'){
-             if (env.buildType == 'release') {
-                 echo './gradlew assembleRelease'
-             }
              steps {
                 sh 'echo checkout code'
              }
