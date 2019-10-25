@@ -2,7 +2,7 @@ pipeline{
     agent {
         docker {
             image 'jenkins-android:1.0.0'
-            args  '-v ~/gradle:/root'
+            args  '-v /gradle:/root'
         }
     }
     stages {
