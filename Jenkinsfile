@@ -12,7 +12,6 @@ pipeline{
         }
         stage('Clean') {
             steps {
-                sh 'yes | /sdk/tools/bin/sdkmanager --licenses'
                 sh 'chmod 777 ./gradlew'
                 sh './gradlew clean'
                 sh 'echo init finished'
