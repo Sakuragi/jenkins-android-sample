@@ -2,11 +2,13 @@ pipeline{
     agent {
         docker {
             image 'jenkins-android:1.0.0'
+            args  '-v ~/gradle:/root'
         }
     }
     stages {
         stage('checkout code'){
              steps {
+                sh  'pwd'
                 sh 'echo checkout code'
              }
         }
