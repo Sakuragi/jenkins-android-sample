@@ -1,7 +1,7 @@
 pipeline{
     agent {
         docker {
-            image 'javiersantos/android-ci:28.0.3'
+            image 'jenkins-android:1.0.0'
         }
     }
     stages {
@@ -34,22 +34,6 @@ pipeline{
                 sh 'echo =========Build OK========'
                 sh 'echo ${EMAIL}'
             }
-        }
-    }
-    post {
-        success {
-            emailext (
-                subject: "SUCCESSFUL: Job '${env.JOB_NAME} '",
-                body: "SUCCESSFUL",
-                to: "${EMAIL}"
-            )
-        }
-        failure {
-            emailext (
-                subject: "FAILED: Job '${env.JOB_NAME}'",
-                body: """<p>FAILED</p>""",
-                to: "${EMAIL}"
-            )
         }
     }
 
