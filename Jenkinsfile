@@ -8,6 +8,7 @@ pipeline{
     stages {
         stage('checkout code'){
              steps {
+                sh 'ls /var/'
                 sh 'ls -all  / && ls /var/jenkins_home/workspace/'
                 sh 'pwd && ls -all && ls /home'
                 sh 'git config user.name'
