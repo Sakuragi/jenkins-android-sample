@@ -16,7 +16,7 @@ pipeline{
                 sh 'git config user.name'
                 sh 'rm -rf  ./PackShellDemo/'
                 sh 'git clone git@dev-gitlab.getui.net:lijm/PackShellDemo.git'
-                sh 'echo checkout code'
+                sh 'echo checkout code ABCDEFG'
              }
         }
         stage('Clean') {
