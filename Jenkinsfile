@@ -8,7 +8,7 @@ pipeline{
     stages {
         stage('checkout code'){
              steps {
-                sh  'pwd'
+                sh  'git clone ssh://Jim@dev-gerrit-b2d.getui.net:29418/gtpush-demo-offical'
                 sh 'echo checkout code'
              }
         }
