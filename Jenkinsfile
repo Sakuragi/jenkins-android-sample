@@ -8,6 +8,8 @@ pipeline{
     stages {
         stage('checkout code'){
              steps {
+                sh 'git config --global user.name lijm'
+                sh 'git config --global user.password l10101125'
                 sh 'ls /var/'
                 sh 'ls -all  / && ls /var/jenkins_home/workspace/'
                 sh 'pwd && ls -all && ls /home'
