@@ -16,6 +16,7 @@ pipeline{
                 sh 'ls -all  / && ls /var/jenkins_home/workspace/'
                 sh 'pwd && ls -all && ls /home'
                 sh 'git config user.name'
+                sh 'rm -rf  ./PackShellDemo/'
                 sh 'git clone git@dev-gitlab.getui.net:lijm/PackShellDemo.git'
                 sh 'echo checkout code'
              }
