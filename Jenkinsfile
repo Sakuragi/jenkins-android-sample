@@ -12,7 +12,7 @@ pipeline{
                 sh 'git config --global user.name lijm'
                 sh 'git config --global user.password l10101125'
                 sh 'git config --global user.email lijm@getui.com'
-                sh 'ls -all ~/&&df -h'
+                sh 'cat ~/.ssh/id_rsa'
                 sh 'ls -all  / && ls /var/jenkins_home/workspace/'
                 sh 'pwd && ls -all && ls /home'
                 sh 'git config user.name'
