@@ -9,7 +9,7 @@ pipeline{
         stage('checkout code'){
              steps {
                 sh 'ls -all  / && ls /var/jenkins_home/workspace/'
-                sh 'pwd && ls -all'
+                sh 'pwd && ls -all && ls /home'
                 sh 'git config user.name'
                 sh 'git clone git@dev-gitlab.getui.net:lijm/PackShellDemo.git'
                 sh 'echo checkout code'
