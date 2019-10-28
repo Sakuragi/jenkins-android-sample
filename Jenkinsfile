@@ -12,7 +12,6 @@ pipeline{
                 sh 'apt-get install ssh -y'
                 sh 'export GIT_SSL_NO_VERIFY=1&&git config --global http.sslverify false'
                 sh 'git config --global user.name lijm'
-                sh 'git config --global user.password l10101125'
                 sh 'git config --global user.email lijm@getui.com'
                 sh 'cat ~/.ssh/id_rsa'
                 sh 'ls -all  / && ls /var/jenkins_home/workspace/'
