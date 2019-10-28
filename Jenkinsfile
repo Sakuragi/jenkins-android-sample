@@ -5,11 +5,15 @@ pipeline{
             args  '-v /tmp/gradlecache:/root'
         }
     }
+    environment {
+       USER_NAME = 'lijm'
+       USER_EMAIL= 'lijm@getui.com''
+    }
     stages {
         stage('checkout code'){
              steps {
-                sh 'git config --global user.name lijm'
-                sh 'git config --global user.email lijm@getui.com'
+                sh 'git config --global user.name ${USER_NAME}'
+                sh 'git config --global user.email ${USER_EMAIL}'
                 sh 'cat ~/.ssh/id_rsa'
                 sh 'ls -all  / && ls /var/jenkins_home/workspace/'
                 sh 'pwd && ls -all && ls /home'
