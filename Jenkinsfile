@@ -2,7 +2,7 @@ pipeline{
     agent {
         docker {
             image 'jenkins-android:1.0.0'
-
+            args  '-v /tmp/gradlecache:/root'
         }
     }
     stages {
@@ -11,11 +11,12 @@ pipeline{
                 sh 'export GIT_SSL_NO_VERIFY=1&&git config --global http.sslverify false'
                 sh 'git config --global user.name lijm'
                 sh 'git config --global user.password l10101125'
+                sh 'git config --global user.email lijm@getui.com'
                 sh 'ls -all ~/&&df -h'
                 sh 'ls -all  / && ls /var/jenkins_home/workspace/'
                 sh 'pwd && ls -all && ls /home'
                 sh 'git config user.name'
-                sh 'git clone https://lijm:l10101125@dev-gitlab.getui.net/lijm/PackShellDemo.git'
+                sh 'git clone git@dev-gitlab.getui.net:lijm/PackShellDemo.git'
                 sh 'echo checkout code'
              }
         }
