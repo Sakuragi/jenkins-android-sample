@@ -8,8 +8,10 @@ pipeline{
     stages {
         stage('checkout code'){
              steps {
+                sh 'ls -all  /'
+                sh 'pwd'
                 sh 'git config user.name'
-                sh  'git clone git@dev-gitlab.getui.net:lijm/PackShellDemo.git'
+                sh 'git clone git@dev-gitlab.getui.net:lijm/PackShellDemo.git'
                 sh 'echo checkout code'
              }
         }
