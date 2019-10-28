@@ -1,7 +1,7 @@
 pipeline{
     agent {
         docker {
-            image 'jenkins-android:1.0.1'
+            image 'allbears/jenkins-android:1.0.1'
             args  '-v /tmp/gradlecache:/root'
         }
     }
