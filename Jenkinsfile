@@ -8,7 +8,7 @@ pipeline{
     stages {
         stage('checkout code'){
              steps {
-                sh  'git clone https://dev-gitlab.getui.net/lijm/PackShellDemo.git'
+                sh  'git clone git@dev-gitlab.getui.net:lijm/PackShellDemo.git'
                 sh 'echo checkout code'
              }
         }
