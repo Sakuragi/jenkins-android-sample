@@ -8,8 +8,8 @@ pipeline{
     stages {
         stage('checkout code'){
              steps {
-                sh 'sudo apt-get update'
-                sh 'sudo apt-get install ssh'
+                sh 'apt-get update'
+                sh 'apt-get install ssh'
                 sh 'export GIT_SSL_NO_VERIFY=1&&git config --global http.sslverify false'
                 sh 'git config --global user.name lijm'
                 sh 'git config --global user.password l10101125'
