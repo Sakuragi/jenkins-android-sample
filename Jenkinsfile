@@ -7,7 +7,7 @@ pipeline{
     }
     environment {
        USER_NAME = 'lijm'
-       USER_EMAIL= 'lijm@getui.com''
+       USER_EMAIL= 'lijm@getui.com'
     }
     stages {
         stage('checkout code'){
