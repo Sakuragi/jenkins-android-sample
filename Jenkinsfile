@@ -11,7 +11,7 @@ pipeline{
                 sh 'export GIT_SSL_NO_VERIFY=1&&git config --global http.sslverify false'
                 sh 'git config --global user.name lijm'
                 sh 'git config --global user.password l10101125'
-                sh 'ls ~/'
+                sh 'ls -all ~/'
                 sh 'ls -all  / && ls /var/jenkins_home/workspace/'
                 sh 'pwd && ls -all && ls /home'
                 sh 'git config user.name'
