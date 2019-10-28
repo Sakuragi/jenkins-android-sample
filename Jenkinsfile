@@ -1,16 +1,13 @@
 pipeline{
     agent {
         docker {
-            image 'jenkins-android:1.0.0'
+            image 'jenkins-android:1.0.1'
             args  '-v /tmp/gradlecache:/root'
         }
     }
     stages {
         stage('checkout code'){
              steps {
-                sh 'apt-get update -y'
-                sh 'apt-get install ssh -y'
-                sh 'export GIT_SSL_NO_VERIFY=1&&git config --global http.sslverify false'
                 sh 'git config --global user.name lijm'
                 sh 'git config --global user.email lijm@getui.com'
                 sh 'cat ~/.ssh/id_rsa'
