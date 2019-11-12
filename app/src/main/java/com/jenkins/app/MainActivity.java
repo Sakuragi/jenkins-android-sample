@@ -11,15 +11,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        final Calcuator calcuator=new Calcuator();
         findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this,"result is: "+add(5,3),Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this,"result is: "+calcuator.add(5,3),Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-    private int add(int i,int j){
-        return i+j;
-    }
 }
