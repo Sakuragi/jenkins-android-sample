@@ -16,7 +16,11 @@ pipeline{
                 sh './gradlew test'
              }
         }
-
+        stage('Archive') {
+            steps {
+                archiveArtifacts artifacts: 'app/build/outputs/**/*.apk', fingerprint: true
+            }
+        }
     }
 
 }
